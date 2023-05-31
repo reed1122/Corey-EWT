@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello</h1>
-</body>
+    <button id="myButton">Alert Text</button>
+    <ul class="myList">
+      <li>test list items; hello world123</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world44</li>
+      <li>test list items; hello world</li>
+      <li>test list items; hello world55</li>
+    </ul>
+    <button id="animate">Animate the box!</button>
+    <div
+      id="myBox"
+      style="
+        background: green;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        margin-top: 15px;
+      "
+    ></div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#myButton").on("click", function () {
+          alert("Hello Everybody!!");
+          $("h1").css("color", "blue");
+        });
+
+        $(".myList li").each(function (index) {
+          console.log(index + ": " + $(this).text());
+        });
+
+        $("#animate").on("click", function() {
+            $("#myBox").animate({left: "250px" }, "slow", function () {
+                alert("Complete!");
+            });
+        });
+      });
+    </script>
+  </body>
 </html>
